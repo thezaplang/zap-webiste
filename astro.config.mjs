@@ -8,6 +8,30 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'ZAP',
+			description: 'ZAP: A modern, high-level systems programming language compiled to native code. Built for safety, performance, and developer productivity with a lightweight concurrency model and garbage collection.',
+			head: [
+				{
+					tag: 'meta',
+					attrs: {
+						property: 'og:type',
+						content: 'website',
+					},
+				},
+				{
+					tag: 'meta',
+					attrs: {
+						property: 'og:site_name',
+						content: 'ZAP Programming Language',
+					},
+				},
+				{
+					tag: 'meta',
+					attrs: {
+						name: 'twitter:card',
+						content: 'summary_large_image',
+					},
+				},
+			],
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/thezaplang/zap' }],
 			sidebar: [
 				{
