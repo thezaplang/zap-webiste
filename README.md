@@ -8,4 +8,4 @@ Contributions are welcome! Please open an issue or submit a pull request.
 
 ## License
 
-ZAP is licensed under the MIT License.
+ZAP Website is licensed under the MIT License.
