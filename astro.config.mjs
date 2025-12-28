@@ -31,6 +31,20 @@ export default defineConfig({
 						content: 'summary_large_image',
 					},
 				},
+				{
+					tag: 'script',
+					attrs: {
+						async: true,
+						src: 'https://www.googletagmanager.com/gtag/js?id=G-LP0QD3PR4L',
+					},
+				},
+				{
+					tag: 'script',
+					content: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-LP0QD3PR4L');`,
+				},
 			],
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/thezaplang/zap' },{icon: 'discord', label: 'Discord', href: 'https://discord.gg/tfbE5Cps5j'}],
 			sidebar: [
