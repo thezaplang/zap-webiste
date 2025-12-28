@@ -57,12 +57,14 @@ gtag('config', 'G-LP0QD3PR4L');`,
 					items: [
 						// Each item here is one entry in the navigation menu.
 						{ label: 'Installing from source', slug: 'guides/install_src' },
+						{ label: 'Your first ZAP program', slug: 'guides/first_program' },
+						{ label: 'declaring variables', slug: 'guides/declaring_variables' },
 					],
 				},
-				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
-				},
+				// {
+				// 	label: 'Reference',
+				// 	autogenerate: { directory: 'reference' },
+				// },
 			],
 		}),
 		react(),
