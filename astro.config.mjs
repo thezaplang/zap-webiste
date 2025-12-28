@@ -32,7 +32,7 @@ export default defineConfig({
 					},
 				},
 			],
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/thezaplang/zap' }],
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/thezaplang/zap' },{icon: 'discord', label: 'Discord', href: 'https://discord.gg/tfbE5Cps5j'}],
 			sidebar: [
 				{
 					label: "Getting started",
