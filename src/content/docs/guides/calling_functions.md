@@ -11,7 +11,7 @@ Let's assume you have a function like this:
 
 ```zap
 fn add(a: i32, b: i32) -> i32{
-return a+b;
+    return a+b;
 }
 ```
 
