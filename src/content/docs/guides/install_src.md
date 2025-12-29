@@ -26,5 +26,5 @@ cmake --build build
 ### Verify Installation
 
 ```bash
-zap --version
+zapc --version
 ```

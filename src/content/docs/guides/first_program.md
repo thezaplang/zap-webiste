@@ -16,5 +16,5 @@ fn main() {
 Run your program:
 
 ```bash
-zap build hello.zap
+zapc hello.zap
 ```
