@@ -20,18 +20,22 @@ var response = stream.recv(4096);
 stream.close();
 ```
 
-`Stream` methods include `fdValue`, `isOpen`, `close`, `send`, `sendAll`,
-`sendLine`, `recv`, `recvExact`, `recvUntil`, `recvLine`,
-`readBufferedBytes`, and `clearBuffer`.
+`Stream` methods include `fdValue()`, `isOpen()`, `close()`, `send(data)`,
+`sendAll(data)`, `sendLine(line)`, `recv(maxLen)`, `recvExact(bytes)`,
+`recvUntil(delimiter, maxLen)`, `recvLine(maxLen)`, `readBufferedBytes()`, and
+`clearBuffer()`.
 
 `Listener` provides `fdValue`, `isOpen`, `accept`, and `close`. Create one with
 `bind(host, port)` or `bindEndpoint(endpoint)`.
 
 ## Raw wrappers
 
-The module also exposes descriptor-based functions: `connect`, `listen`,
-`accept`, `send`, `recv`, `resolve`, `closeIfOpen`, and their `net...`
-runtime declarations.
+The module also exposes descriptor-based functions: `endpoint`, `connect`,
+`connectEndpoint`, `dial`, `dialEndpoint`, `listen`, `bind`, `bindEndpoint`,
+`accept`, `send`, `recv`, `resolve`, `closeIfOpen`, `isValidFd`, `okCode`,
+`invalidFd`, `lastErrorCode`, `makeError`, and `lastError`. Lower-level
+`netAccept`, `netClose`, `netSend`, and `netRecv` are available too, along with
+the `netConnect`, `netListen`, and `netResolve` runtime declarations.
 
 Most operations report failure through a negative descriptor, a return code, or
 `lastErrorCode()`. The current API does not use Zap failable return types.

@@ -45,11 +45,11 @@
       "patterns": [
         {
           "name": "keyword.control.zap",
-          "match": "\\b(if|else|while|for|in|break|continue|return|fail)\\b"
+          "match": "\\b(if|else|while|for|in|case|break|continue|return|fail|defer)\\b"
         },
         {
           "name": "keyword.declaration.zap",
-          "match": "\\b(fun|var|const|global|class|struct|record|enum|alias|import|pub|priv|prot|static|unsafe|ext|new|weak|ref|or|where|iftype)\\b"
+          "match": "\\b(fun|var|let|const|global|class|struct|record|enum|alias|import|pub|priv|prot|static|unsafe|ext|new|weak|ref|or|where|iftype)\\b"
         },
         {
           "name": "constant.language.zap",

@@ -14,7 +14,7 @@ You can use its names without writing an import.
 | Output | `print`, `println`, `eprintln` |
 | String helpers | `stringLen`, `fromChar`, `pushChar`, `trim`, `splitOnce`, `SplitPair` |
 | Conversion | `toString`, `toInt`, `toBool`, `parseInt`, `ParseIntError` |
-| Collections | `List`, `HashMap` |
+| Collections | `List`, `Stack`, `Queue`, `HashSet`, `HashMap` |
 | String collections | `split`, `splitN`, `splitTrimmed`, `join` |
 
 ```zap

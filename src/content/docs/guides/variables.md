@@ -1,6 +1,6 @@
 ---
 title: Variables
-description: Declare mutable local values and use type inference.
+description: Declare mutable and immutable local values with optional type inference.
 ---
 
 Use `var` to declare a local variable:
@@ -19,6 +19,28 @@ status = "ready";
 
 The new value must have a compatible type. A variable's type does not change
 after its declaration.
+
+## Immutable bindings
+
+Use `let` for a local binding that cannot be assigned again. Like `var`, it
+accepts either an inferred or explicit type and always has an initializer:
+
+```zap
+let host = "127.0.0.1";
+let port: Int = 8080;
+```
+
+The binding is immutable, not the object it refers to. A `let` binding can call
+methods that change the referenced object:
+
+```zap
+let names = new List<String>();
+names.push("Ada");
+println(names.front());
+```
+
+Use `let` when the name should keep the same value, and `var` when the binding
+itself must be assigned again.
 
 ## Type inference
 

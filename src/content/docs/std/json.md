@@ -1,34 +1,45 @@
 ---
 title: std/json
-description: Parse the current early subset of JSON values and objects.
+description: Parse, build, inspect, and serialize JSON values.
 ---
 
 ```zap
 import "std/json" as json;
 ```
 
-`JsonParser` parses one value and reports validity through fields on the parser
-and result:
+`parse` reads one complete JSON document and returns a failable `Value`:
 
 ```zap
-var parser = new json.JsonParser("{\"name\":\"Zap\"}");
-var value = parser.parse();
-
-if !value.valid {
-    eprintln("invalid JSON");
+var value = json.parse("{\"name\":\"Zap\",\"active\":true}") or err {
+    eprintln(err.message);
     return 1;
-}
+};
+
+var object = value.asObject() or err {
+    eprintln(err.message);
+    return 1;
+};
+var name = object.getString("name") or err {
+    eprintln(err.message);
+    return 1;
+};
+println(name);
 ```
 
 ## Types
 
-- `JsonType` identifies `STRING`, `NUMBER`, `BOOL`, `NULLTYPE`, or `OBJECT`.
-- `JsonValue` stores the tag, value fields, original object source, and `valid`.
-- `JsonObject` provides `put`, `get`, `has`, and `size`.
-- `JsonParser` exposes lower-level cursor and parsing methods in addition to
-  `parse`.
+- `Kind` identifies `String`, `Number`, `Boolean`, `Null`, `Object`, or
+  `Array`.
+- `Value` has constructors for every JSON kind, predicates such as `isArray()`,
+  checked accessors `asString()`, `asInt()`, `asUInt()`, `asFloat64()`,
+  `asBool()`, `asObject()`, and `asArray()`, plus `stringify()`.
+- `Object` provides overloaded `put`, `putNull`, `has`, `size`, `get`,
+  `keyAt`, typed `getString`, `getInt`, `getUInt`, `getFloat64`, `getBool`,
+  `getObject`, and `getArray`, plus `stringify()`.
+- `Array` provides overloaded `push`, `pushNull`, `size`, `at`, the matching
+  typed getters, and `stringify()`.
 
-The module is an early implementation, not a complete JSON codec. Object and
-string parsing work, while numbers, booleans, null, arrays, escaping, and
-serialization are not yet fully implemented. Check `valid` before using a
-parsed value.
+`parse(text)` and `parse(text, maxDepth)` report `json.Error` on invalid JSON.
+The checked accessors and serializers use the same error type. JSON strings,
+numbers, booleans, nulls, objects, arrays, escapes, and nested values are
+supported.

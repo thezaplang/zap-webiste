@@ -11,8 +11,9 @@ import "std/process" as process;
 | --- | --- |
 | `argc() Int` | Number of command-line arguments |
 | `argv(index: Int) String` | Argument at `index`; index zero is the program path |
+| `getEnv(name: String) String` | Environment value, or an empty string when absent |
 | `cwd() String` | Current working directory |
-| `exec(command: String) Int` | Runs a shell command and returns its status |
+| `exec(command: StringView) Int` | Runs a shell command and returns its status |
 | `exit(code: Int) Void` | Ends the process |
 | `panic(message: String) Void` | Prints to standard error and exits with code 1 |
 

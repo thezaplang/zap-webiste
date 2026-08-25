@@ -18,9 +18,10 @@ you need the rest of its API.
 | Module | Purpose |
 | --- | --- |
 | [`std/io`](/std/io/) | Terminal input and output |
+| [`std/term`](/std/term/) | ANSI colors, text styles, and cursor control |
 | [`std/string`](/std/string/) | String views, trimming, splitting, and building |
 | [`std/strings`](/std/strings/) | Split and join lists of strings |
-| [`std/collection`](/std/collection/) | Dynamic lists and string-keyed maps |
+| [`std/collection`](/std/collection/) | Generic lists, stacks, queues, sets, and maps |
 | [`std/slice`](/std/slice/) | Checked helpers for slices |
 | [`std/convert`](/std/convert/) | Primitive conversions and integer parsing |
 | [`std/fs`](/std/fs/) | Failable file and directory operations |
@@ -28,7 +29,7 @@ you need the rest of its API.
 | [`std/process`](/std/process/) | Arguments, working directory, execution, and exit |
 | [`std/math`](/std/math/) | Basic integer and floating-point helpers |
 | [`std/random`](/std/random/) | Seeded PCG32 pseudo-random generation |
-| [`std/json`](/std/json/) | Early JSON object parser |
+| [`std/json`](/std/json/) | JSON parsing, construction, inspection, and serialization |
 | [`std/network`](/std/network/) | TCP-style streams, listeners, and raw socket wrappers |
 | [`std/error`](/std/error/) | A general structured error value |
 | [`std/mem`](/std/mem/) | Unsafe C allocation functions |

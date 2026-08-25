@@ -14,6 +14,7 @@ import "std/io" as io;
 | `print(text: String)` | Writes text without a newline |
 | `println(text: String)` | Writes text followed by a newline |
 | `eprintln(text: String)` | Writes text and a newline to standard error |
+| `eprint(text: String)` | Writes text without a newline to standard error |
 | `printInt(value: Int)` | Writes an integer |
 | `printFloat(value: Float)` | Writes a `Float` |
 | `printFloat64(value: Float64)` | Writes a `Float64` |
@@ -22,6 +23,8 @@ import "std/io" as io;
 | `getln() String` | Reads one line from standard input |
 | `printf(format: String, ...) Int` | C-style formatted output |
 | `printfln(format: String, ...) Int` | Formatted output followed by a newline |
+| `flush()` | Flushes standard output |
+| `eflush()` | Flushes standard error |
 
 `print`, `println`, and `eprintln` are in the automatic prelude.
 

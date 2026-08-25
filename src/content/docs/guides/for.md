@@ -6,6 +6,33 @@ description: Count iterations or visit every value in an array, slice, or collec
 Zap has two `for` forms: a C-style loop and a `for ... in` loop. Both use a
 block and support `break` and `continue`.
 
+## Iterate over a range
+
+Range expressions are available as the iterable in a `for ... in` loop. The
+end value is exclusive. A range normally advances by one:
+
+```zap
+for port in 8000..8003 {
+    println(toString(port));
+}
+```
+
+Add a second `..` and an integer step to control the increment. A negative
+step counts down:
+
+```zap
+for even in 0..10..2 {
+    println(toString(even));
+}
+
+for second in 10..0..-2 {
+    println(toString(second));
+}
+```
+
+Ranges currently work only as the iterable of `for ... in`; they are not a
+general-purpose value elsewhere in a program.
+
 ## C-style `for`
 
 A C-style loop contains an initialization, a Bool condition, and an update:

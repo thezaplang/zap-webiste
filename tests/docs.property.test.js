@@ -33,6 +33,8 @@ describe('documentation structure', () => {
       'if',
       'while',
       'for',
+      'case',
+      'defer',
       'records',
       'structs',
       'enums',

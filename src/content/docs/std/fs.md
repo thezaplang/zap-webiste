@@ -17,6 +17,7 @@ Operations that can fail return `T!fs.FsError`. Handle them with `?`, `or`, or
 | `exists(path) Bool` | Whether any entry exists |
 | `isFile(path) Bool` | Whether the path is a regular file |
 | `isDir(path) Bool` | Whether the path is a directory |
+| `isSymlink(path) Bool` | Whether the path is a symbolic link |
 | `mkdir(path) Void!FsError` | Creates one directory |
 | `mkdirAll(path) Void!FsError` | Creates missing parent directories |
 | `ensureDir(path) Void!FsError` | Ensures a directory exists |

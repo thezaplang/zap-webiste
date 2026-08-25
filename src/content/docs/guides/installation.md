@@ -39,10 +39,11 @@ configuration and dependencies.
 
 A source build requires:
 
-- a C++20 compiler
-- LLVM development libraries
-- CMake 3.20 or newer
-- Git
+- Clang 15+ or GCC 12.1+
+- LLVM 21 development libraries
+- Meson and Ninja
+- OpenSSL development libraries
+- Python 3
 
 Clone and build the repository:
 
@@ -52,29 +53,18 @@ cd zap
 ./build.sh
 ```
 
-The compiler is written to `build/zapc`. Build Thor from the repository's
-pinned submodule and use it for programs:
-
-```bash
-git submodule update --init tools/thor
-cd tools/thor
-PATH="../../build:$PATH" ./build.sh
-./build/thor new hello
-cd hello
-../../build/thor run
-```
-
-For daily use, place both `build/zapc` and `tools/thor/build/thor` on your
-`PATH`. `zapc` remains useful for editor configuration and low-level compiler
-diagnostics; Thor is the normal application workflow.
+The compiler is written to `build/zapc`. Add that directory to your `PATH` for
+daily use, then install Thor with the instructions above. `zapc` remains useful
+for editor configuration and low-level compiler diagnostics; Thor is the
+normal application workflow.
 
 ## Verify a development build
 
 Run both test suites before changing the compiler:
 
 ```bash
-ctest --test-dir build --output-on-failure
-./run_tests.py --zapc ./build/zapc
+meson test -C build --print-errorlogs
+./run_tests.sh
 ```
 
 Continue with [Your first program](/guides/first_program/).
